@@ -1,5 +1,5 @@
 from string import ascii_lowercase
-
+# UNFINISHED
 def rank(st, we, n):
     # your code
     if not st:
@@ -8,7 +8,7 @@ def rank(st, we, n):
     if n > len(list(st)):
         return 'Not enough participants'
     name = ''
-    
+
     LETTERS = {letter: str(index) for index, letter in enumerate(ascii_lowercase, start=1)} 
 
     def alphabet_position(text):
