@@ -1,5 +1,5 @@
-import collections
-from itertools import repeat, chain
+#import collections
+#from itertools import repeat, chain
 def frequency_sort(items):
     # your code here
     '''
@@ -20,8 +20,8 @@ def frequency_sort(items):
     else: 
         return sorted(items, key=lambda x: (collections.Counter(items)[x], x), reverse=False)
     '''
-    result = list(chain.from_iterable(repeat(i, c)
-         for i, c in collections.Counter(items).most_common()))
+#    result = list(chain.from_iterable(repeat(i, c)
+#         for i, c in collections.Counter(items).most_common()))
  
     '''
     l = []
@@ -32,6 +32,37 @@ def frequency_sort(items):
             frequency_sort(l)
     return l
     '''
+    '''OTHER SOLUTION
+    def frequency_sort(items):
+    
+    items_unique = [] 
+      
+    for x in items:                     # loop to find unique items
+        if x not in items_unique: 
+            items_unique.append(x) 
+       
+    counts = []
+            
+    for x in items_unique:              # loop to find the count per unique item
+        count = items.count(x)
+        counts.append(count)
+        
+    output = []
+        
+    for i in range(len(counts)):        # loop to add each item to the output the correct number of times
+        maxcount = max(counts)
+        maxind = counts.index(maxcount)
+        
+        output += [items_unique[maxind]]*maxcount
+        counts[maxind] = 0
+    
+    return output
+    '''
+    #OTHER SOLUTION
+def frequency_sort(items):
+    temp = sorted(items,key = lambda x:items.count(x),reverse =True)
+    return sorted(temp,key = lambda x:temp.index(x))
+
         
     # These "asserts" are used for self-checking and not for an auto-testing
 frequency_sort([1,2,2,1])
