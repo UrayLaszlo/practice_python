@@ -1,15 +1,12 @@
-def checkio(number: int) -> int:
+def checkio(number):
+    n = [int(x) for x in str(number) if x != '0']
+    #m = [x for x in n if x != 0]
+    m = 1
+    for i in n:
+        m *= i 
+    return m
 
-    return 1
-
-
-if __name__ == '__main__':
-    print('Example:')
-    print(checkio(123405))
-    
-    # These "asserts" using only for self-checking and not necessary for auto-testing
-    assert checkio(123405) == 120
-    assert checkio(999) == 729
-    assert checkio(1000) == 1
-    assert checkio(1111) == 1
-    print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
+checkio(123405) # 120
+checkio(999) # 729
+checkio(1000) # 1
+checkio(1111) # 1
