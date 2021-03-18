@@ -3,6 +3,7 @@ def order(sentence):
     return " ".join(sorted(new_string, key=lambda x :int("".join([i for i in x if i.isdigit()]))))
     # Alternative
     #return ' '.join(sorted(words.split(), key=lambda   w:sorted(w)))
+    #return " ".join(sorted(sentence.split(), key=lambda x: int(filter(str.isdigit, x))))
 
 
 order("is2 Thi1s T4est 3a")# "Thi1s is2 3a T4est")
