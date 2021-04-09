@@ -6,6 +6,7 @@ def all_the_same(elements):
         if i not in l:
             l.append(i)
     return len(l) < 2
+    print(len(l))
 
 all_the_same([1, 1, 1]) # True
 all_the_same([1, 2, 1]) # False
