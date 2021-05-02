@@ -1,7 +1,9 @@
 def sort_by_ext(files):
     # your code here
+    files.sort(key=lambda x: x.split('.')[-1])
     return files
 
+    return sorted(sorted(files),key=lambda x:(x.rfind('.')>0)*x.split('.')[-1])
 
 
 sort_by_ext(['1.cad', '1.bat', '1.aa']) # ['1.aa', '1.bat', '1.cad']
